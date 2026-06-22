@@ -2,6 +2,8 @@
 
 Quick reference for what this app does, what it needs, and where things live.
 
+**Full documentation index:** [INDEX.md](./INDEX.md)
+
 ---
 
 ## One-Sentence Summary
@@ -37,6 +39,17 @@ Quick reference for what this app does, what it needs, and where things live.
 
 ---
 
+## Production (Daily Wings)
+
+| Item | Value |
+|---|---|
+| VPS path | `/opt/fb-auto-poster/clients/daily-wings` |
+| PM2 | `fb-autopost-daily-wings` |
+| Schedule | 11:00 AM Asia/Manila daily |
+| GitHub | https://github.com/fielvioleta/fb-auto-poster |
+
+---
+
 ## Key Files
 
 | Path | What it stores |
@@ -52,18 +65,34 @@ Quick reference for what this app does, what it needs, and where things live.
 
 ## Commands You'll Use Most
 
+### Local (development)
+
 ```bash
-npm run build          # after code or config changes
-npm start              # run server + scheduler
-npm run publish        # test: generate + post now
-curl -X POST .../photos/sync   # first-time photo setup
-curl .../history       # see past posts
+npm run build
+npm start
+npm run publish
+curl -X POST http://localhost:3001/generate
+```
+
+### VPS (production)
+
+```bash
+pm2 list
+pm2 logs fb-autopost-daily-wings
+pm2 restart fb-autopost-daily-wings
+curl http://localhost:3001/health
 ```
 
 ---
 
-## Docs Index
+## All Documentation
 
-- [README.md](../README.md) — full setup and API reference
-- [CLIENT_ONBOARDING.md](./CLIENT_ONBOARDING.md) — onboard a new client / sell to other businesses
-- [.env.example](../.env.example) — all environment variables
+| Doc | Purpose |
+|---|---|
+| [INDEX.md](./INDEX.md) | **Start here** — master index |
+| [README.md](../README.md) | Full technical setup + API |
+| [DEPLOY_DAILY_WINGS.md](./DEPLOY_DAILY_WINGS.md) | VPS deployment walkthrough |
+| [VPS_MULTI_CLIENT.md](./VPS_MULTI_CLIENT.md) | Multi-client hosting (Option A) |
+| [CLIENT_ONBOARDING.md](./CLIENT_ONBOARDING.md) | Onboard new restaurant clients |
+| [OPERATIONS.md](./OPERATIONS.md) | Logs, restart, updates, troubleshooting |
+| [.env.example](../.env.example) | All environment variables |

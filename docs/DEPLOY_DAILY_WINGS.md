@@ -172,19 +172,31 @@ cd /opt/fb-auto-poster/clients/daily-wings
 pm2 start dist/index.js --name fb-autopost-daily-wings
 pm2 save
 pm2 startup
-# Copy and run the sudo command PM2 prints
 ```
+
+**Note on `pm2 startup`:** On modern PM2, it automatically runs `systemctl enable pm2-root` for you. If you see:
+
+```
+[PM2] [v] Command successfully executed.
+```
+
+you are done — **no extra `sudo env PATH=...` command needed.**
 
 Verify:
 
 ```bash
 pm2 list
 pm2 logs fb-autopost-daily-wings --lines 30
+curl http://localhost:3001/health
 ```
 
 You should see:
+- `fb-autopost-daily-wings` → **online**
 - `HTTP server listening on port 3001`
 - `Scheduler started: "0 11 * * *" (Asia/Manila)`
+- `"facebookConnected": true` in health response
+
+See [OPERATIONS.md](./OPERATIONS.md) for day-to-day commands.
 
 ---
 
@@ -281,6 +293,24 @@ See [VPS_MULTI_CLIENT.md](./VPS_MULTI_CLIENT.md) and run:
 
 ---
 
+## Deployment Complete Checklist
+
+Use this to confirm Daily Wings is fully live:
+
+```
+[ ] pm2 list → fb-autopost-daily-wings is online
+[ ] curl localhost:3001/health → facebookConnected: true
+[ ] pm2 logs shows "Scheduler started"
+[ ] pm2 save && pm2 startup completed
+[ ] Test publish worked (post visible on Facebook Page)
+[ ] Photos synced (optional): curl -X POST localhost:3001/photos/sync
+```
+
+---
+
 ## Next Step
 
-When you have your VPS IP ready, follow **Part 1** through **Part 5** above. If you want, share where you're stuck (provider choice, SSH, `.env`, PM2) and we can walk through it live.
+Daily Wings should now post automatically every day at 11:00 AM Manila time.
+
+For ongoing ops, see [OPERATIONS.md](./OPERATIONS.md).  
+For adding client #2, see [VPS_MULTI_CLIENT.md](./VPS_MULTI_CLIENT.md).

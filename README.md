@@ -410,15 +410,18 @@ pm2 save && pm2 startup
 
 ## Documentation
 
+**Start here:** [docs/INDEX.md](docs/INDEX.md)
+
 | Document | Purpose |
 |---|---|
-| [README.md](README.md) | Main setup and reference (this file) |
-| [docs/OVERVIEW.md](docs/OVERVIEW.md) | Quick one-page summary of what the app does |
-| [docs/VPS_MULTI_CLIENT.md](docs/VPS_MULTI_CLIENT.md) | **Multi-client VPS layout** — folder structure, PM2 naming, ops |
-| [docs/DEPLOY_DAILY_WINGS.md](docs/DEPLOY_DAILY_WINGS.md) | **Deploy Daily Wings** — first VPS + PM2 walkthrough |
-| [docs/CLIENT_ONBOARDING.md](docs/CLIENT_ONBOARDING.md) | Onboard a new restaurant client (selling as a service) |
-| [.env.example](.env.example) | Template for all environment variables |
-| [scripts/vps/](scripts/vps/) | VPS helper scripts (`install-base.sh`, `new-client.sh`) |
+| [docs/INDEX.md](docs/INDEX.md) | **Master index** — links to everything |
+| [docs/OVERVIEW.md](docs/OVERVIEW.md) | Quick one-page summary |
+| [docs/DEPLOY_DAILY_WINGS.md](docs/DEPLOY_DAILY_WINGS.md) | Deploy Daily Wings on VPS + PM2 |
+| [docs/VPS_MULTI_CLIENT.md](docs/VPS_MULTI_CLIENT.md) | Multi-client VPS layout (Option A) |
+| [docs/OPERATIONS.md](docs/OPERATIONS.md) | Day-to-day ops, logs, PM2, troubleshooting |
+| [docs/CLIENT_ONBOARDING.md](docs/CLIENT_ONBOARDING.md) | Onboard a new restaurant client |
+| [.env.example](.env.example) | All environment variables |
+| [scripts/vps/](scripts/vps/) | VPS helper scripts |
 
 ---
 

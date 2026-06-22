@@ -86,9 +86,13 @@ You can also clone fresh per client (see New Client below).
 ### 5. PM2 startup on reboot
 
 ```bash
+pm2 save
 pm2 startup
-# run the command it prints (sudo env PATH=...)
 ```
+
+On modern PM2, `pm2 startup` auto-runs `systemctl enable pm2-root`. If you see `[PM2] [v] Command successfully executed.`, you're done.
+
+See [OPERATIONS.md](./OPERATIONS.md) for PM2 day-to-day commands.
 
 ---
 
