@@ -413,8 +413,12 @@ pm2 save && pm2 startup
 | Document | Purpose |
 |---|---|
 | [README.md](README.md) | Main setup and reference (this file) |
-| [docs/CLIENT_ONBOARDING.md](docs/CLIENT_ONBOARDING.md) | **Onboard a new restaurant client** — step-by-step for selling this as a service |
+| [docs/OVERVIEW.md](docs/OVERVIEW.md) | Quick one-page summary of what the app does |
+| [docs/VPS_MULTI_CLIENT.md](docs/VPS_MULTI_CLIENT.md) | **Multi-client VPS layout** — folder structure, PM2 naming, ops |
+| [docs/DEPLOY_DAILY_WINGS.md](docs/DEPLOY_DAILY_WINGS.md) | **Deploy Daily Wings** — first VPS + PM2 walkthrough |
+| [docs/CLIENT_ONBOARDING.md](docs/CLIENT_ONBOARDING.md) | Onboard a new restaurant client (selling as a service) |
 | [.env.example](.env.example) | Template for all environment variables |
+| [scripts/vps/](scripts/vps/) | VPS helper scripts (`install-base.sh`, `new-client.sh`) |
 
 ---
 

@@ -350,8 +350,10 @@ The codebase is already structured for this (`container.ts` composition root, in
 
 | File | Purpose |
 |---|---|
-| `README.md` | Full technical documentation |
-| `.env.example` | Environment variable template |
+| [README.md](../README.md) | Full technical documentation |
+| [VPS_MULTI_CLIENT.md](./VPS_MULTI_CLIENT.md) | Multi-client VPS + PM2 hosting |
+| [DEPLOY_DAILY_WINGS.md](./DEPLOY_DAILY_WINGS.md) | First VPS deployment (Daily Wings) |
+| [.env.example](../.env.example) | Environment variable template |
 | `src/config/restaurant.ts` | Client brand, menu, topics |
 | `data/posts.json` | Post history for this client |
 | `data/pagePhotos.json` | Photo tags cache for this client |
